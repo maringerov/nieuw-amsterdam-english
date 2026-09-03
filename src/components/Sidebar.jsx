@@ -1,3 +1,4 @@
+import { assetUrl } from '../utils/assets.js';
 import { extractSubsections, slugify } from '../utils/helpers.js';
 
 function MenuIcon() {
@@ -37,7 +38,7 @@ export default function Sidebar({
           onClick={() => onNavigate('home')}
         >
           <img
-            src="/assets/nieuwamsterdam.png"
+            src={assetUrl('assets/nieuwamsterdam.png')}
             alt=""
             className="mobile-brand-logo"
           />
@@ -78,7 +79,7 @@ export default function Sidebar({
             onClick={() => onNavigate('home')}
           >
             <img
-              src="/assets/nieuwamsterdam.png"
+              src={assetUrl('assets/nieuwamsterdam.png')}
               alt="New Amsterdam Agenda"
               className="sidebar-logo"
             />
@@ -132,5 +133,3 @@ export default function Sidebar({
     </>
   );
 }
-
-export { scrollToId };

@@ -42,11 +42,16 @@ export function scrollToId(id) {
   });
 }
 
+import { assetUrl } from './assets.js';
+
 export function mapImageSrc(src) {
   if (!src) return src;
-  if (src.includes('01amsterdamAI.png')) return '/assets/01amsterdamAI.png';
-  if (src.includes('02euc.png')) return '/assets/02euc.png';
-  if (src.includes('03agendanieuwamsterdam.png')) return '/assets/03agendanieuwamsterdam.png';
-  if (src.includes('nieuwamsterdam.png')) return '/assets/nieuwamsterdam.png';
+  if (/^https?:\/\//i.test(src) || src.startsWith('mailto:')) return src;
+
+  const path = src.startsWith('/') ? src.slice(1) : src;
+  if (path.startsWith('assets/')) {
+    return assetUrl(path);
+  }
+
   return src;
 }
