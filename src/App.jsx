@@ -3,6 +3,7 @@ import content from '../content-en.json';
 import HomeSection from './components/HomeSection.jsx';
 import ContentSection from './components/ContentSection.jsx';
 import Sidebar from './components/Sidebar.jsx';
+import { assetUrl } from './utils/assets.js';
 import { scrollToId, isDarkSection } from './utils/helpers.js';
 
 export default function App() {
@@ -108,7 +109,7 @@ export default function App() {
         <footer className="site-footer">
           <div className="site-footer-inner">
             <img
-              src="/assets/nieuwamsterdam.png"
+              src={assetUrl('assets/nieuwamsterdam.png')}
               alt=""
               className="site-footer-logo"
             />

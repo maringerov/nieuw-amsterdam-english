@@ -1,3 +1,4 @@
+import { assetUrl } from '../utils/assets.js';
 import { splitBlocks } from '../utils/helpers.js';
 
 export default function HomeSection({ section, meta }) {
@@ -46,7 +47,7 @@ export default function HomeSection({ section, meta }) {
 
         <div className="home-logo-wrap">
           <img
-            src="/assets/nieuwamsterdam.png"
+            src={assetUrl('assets/nieuwamsterdam.png')}
             alt="New Amsterdam Agenda crest"
             className="home-logo"
           />
